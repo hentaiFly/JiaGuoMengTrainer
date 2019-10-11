@@ -8,7 +8,7 @@ Import "Thread.lua"
 '是否不同分辨率
 Dim diffXY = False
 '按钮坐标系
-Dim buttons = { "edit": Array(1001, 1152), "et_switch": Array(548,1756), "et_upgrade": Array(856, 1756) }
+Dim buttons = { "edit": Array(1001, 1152), "et_switch": Array(548,1696), "et_upgrade": Array(860, 1696) }
 '火车货物
 Dim goodsList = { 1: Array(646, 1646, 750, 1716), 2: Array(804, 1568, 899, 1631), 3: Array(955, 1477, 1054, 1549) }
 Dim goodsPoints = { 1: Array(683, 1683), 2: Array(839, 1604), 3: Array(991, 1517) }
@@ -140,7 +140,7 @@ Function HandlePolicyLevelUp
 	
     FindPic 100, 100, 400, 400, "Attachment:dashboard_upgrade_policy_sign.png", "000000", 4, 0.9, intX, intY
     If intX = -1 And intY = -1 Then 
-    //    Exit Function
+        Exit Function
     End If
 	
     '打开升级窗口
@@ -150,7 +150,7 @@ Function HandlePolicyLevelUp
     For 5
     	Delay 400
     	Tap 380, 1640
-    	TracePrint "点击了"
+    	TracePrint "点击跳过上一个政策升级完成的屏幕"
     Next
 	
 	
@@ -485,7 +485,7 @@ Function RestartGame
     stuckTimes = 0
     Delay 200
     RunApp package
-    Delay 3000
+    Delay 5000
 End Function
 
 // 将游戏转入后台并开启飞行模式
